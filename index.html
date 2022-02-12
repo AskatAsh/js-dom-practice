@@ -29,8 +29,21 @@
       <p>Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?</p>
     </article>
   </section>
+
+
   <script>
-   console.log(document);
+
+    const student = {name: "askat", age: 24, height: 60}
+  //  console.log(document.body);
+  const blogTitles =  document.getElementsByTagName('h3');
+  for (const h3 of blogTitles){
+    console.log(h3.innerText);
+  }
+
+  const blogTexts = document.getElementsByTagName('p');
+  for (const p of blogTexts){
+    console.log(p.innerText);
+  }
   </script>
 </body>
 </html>

@@ -132,6 +132,15 @@
       blogs.style.margin = '15px';
       blogs.style.padding = '15px';
     }
+
+
+  // remove an element using js
+  const blogList = document.getElementById('blog-list');
+  const secondItem = blogList.children[1];
+  blogList.removeChild(secondItem);
+
+  const fourthItem = blogList.children[2];
+  blogList.removeChild(fourthItem);
   </script>
 </body>
 </html>

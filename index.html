@@ -12,27 +12,33 @@
     color: #fff;
     background-color: rgb(49, 0, 128);
   } */
+  /* .blogs{
+    border: 2px solid orange;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+  } */
 </style>
 <body>
   <header>
     <h1>JavaScript document object model</h1>
   </header>
-  <section>
-    <article>
+  <section id="blog-section">
+    <article class="blogs">
       <h3>Welcome to my blog-1</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti aperiam, quo quae consequuntur ab autem facere delectus eligendi dolorum quibusdam accusantium officiis corporis velit voluptas. Amet tempore laudantium provident ratione.</p>
+      <p class="blog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti aperiam, quo quae consequuntur ab autem facere delectus eligendi dolorum quibusdam accusantium officiis corporis velit voluptas. Amet tempore laudantium provident ratione.</p>
     </article>
-    <article>
+    <article class="blogs">
       <h3 id="second-title">Welcome to my blog-2</h3>
-      <p>Eum eligendi dignissimos eveniet non ipsum assumenda quam, perferendis neque, optio provident ex esse illo quasi hic, quibusdam aut architecto possimus fugit sunt dolores doloremque quos? Maiores magni voluptates reiciendis.</p>
+      <p class="blog-text">Eum eligendi dignissimos eveniet non ipsum assumenda quam, perferendis neque, optio provident ex esse illo quasi hic, quibusdam aut architecto possimus fugit sunt dolores doloremque quos? Maiores magni voluptates reiciendis.</p>
     </article>
-    <article>
+    <article class="blogs">
       <h3 id="third-title">Welcome to my blog-3</h3>
-      <p>Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?</p>
+      <p class="blog-text">Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?</p>
     </article>
-    <article>
+    <article class="blogs">
       <h3>Welcome to my blog-4</h3>
-      <p>Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?</p>
+      <p class="blog-text">Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?</p>
     </article>
   </section>
 
@@ -51,6 +57,7 @@
     console.log(p.innerText);
   }
 
+  // selecting document by id
   const secondTitle = document.getElementById('second-title');
   secondTitle.style.textAlign = "center";
 
@@ -60,6 +67,24 @@
   thirdTitle.style.color = "#f4f4f4";
   thirdTitle.style.backgroundColor = "blueviolet";
   thirdTitle.style.padding = "15px";
+
+
+  // selecting document by class name
+  const blog = document.getElementsByClassName('blogs');
+  for (const blogs of blog) {
+    blogs.style.border = '3px solid orange';
+    blogs.style.borderRadius = '10px';
+    blogs.style.margin = '15px';
+    blogs.style.padding = '15px';
+  }
+
+
+  // selecting elements by query selector
+  const blogText = document.querySelectorAll('.blog-text');
+  for (const blogtxt of blogText) {
+    blogtxt.style.backgroundColor='#ffffdd';
+    blogtxt.style.padding='15px 20px';
+  }
 
   </script>
 </body>

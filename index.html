@@ -22,6 +22,12 @@
 <body>
   <header>
     <h1>JavaScript document object model</h1>
+    <ul id="blog-list">
+      <li>Blog item - 1</li>
+      <li>Blog item - 2</li>
+      <li>Blog item - 3</li>
+      <li>Blog item - 4</li>
+    </ul>
   </header>
   <section id="blog-section">
     <article class="blogs">
@@ -69,14 +75,14 @@
   thirdTitle.style.padding = "15px";
 
 
-  // selecting document by class name
+  /* // selecting document by class name
   const blog = document.getElementsByClassName('blogs');
   for (const blogs of blog) {
     blogs.style.border = '3px solid orange';
     blogs.style.borderRadius = '10px';
     blogs.style.margin = '15px';
     blogs.style.padding = '15px';
-  }
+  } */
 
 
   // selecting elements by query selector
@@ -86,6 +92,46 @@
     blogtxt.style.padding='15px 20px';
   }
 
+
+  // create and add elements by using js
+  // step-1 create the element
+  const li = document.createElement('li');
+  li.innerText='Blog item - 5';
+
+  // step-2 where to add
+  const ul = document.getElementById('blog-list');
+  ul.appendChild(li);
+
+  // add and create a new article
+  const article = document.createElement('article');
+  article.classList.add('blogs');
+  const h3 = document.createElement('h3');
+  h3.innerText = 'Welcome to my blog-5';
+  
+/*   const p = document.createElement('p');
+  p.innerText = 'Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?'; */
+
+  article.innerHTML= `
+    <h3>Welcome to my blog-5</h3>
+    <p class="blog-text">Impedit et nulla corrupti possimus quam quos unde ea aliquam, officiis debitis libero, voluptatibus dolor eveniet doloremque nemo doloribus, quod veniam sint. Alias ad voluptatum cumque excepturi ab beatae id?</p>
+  `;
+
+  // article.appendChild(h3);
+  // article.appendChild(p);
+
+  const blogSection = document.getElementById('blog-section');
+  blogSection.appendChild(article);
+
+
+
+  // selecting document by class name
+    const blog = document.getElementsByClassName('blogs');
+    for (const blogs of blog) {
+      blogs.style.border = '3px solid orange';
+      blogs.style.borderRadius = '10px';
+      blogs.style.margin = '15px';
+      blogs.style.padding = '15px';
+    }
   </script>
 </body>
 </html>
